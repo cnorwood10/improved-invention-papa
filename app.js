@@ -47,7 +47,6 @@ app.get('/', async (req,res) => {
   console.log("myResults:", dbResult);
 
   res.render('index', {
-    myTypeClient: myTypeServer,
     myView: dbResult
 
   });
