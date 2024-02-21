@@ -1,3 +1,5 @@
+<%- include('partials/html-start.ejs') %>
+
 <h1>Welcome </h1>
 
 <p>I'm Colby.
@@ -8,17 +10,27 @@
 
 <hr>
 
-<p><%= myView[0].userName %></p>
+<!-- <form method="get" action="/name">
+    <p>Tell us your name! Or something: </p>
+    <input type="text" name="ejsFormName" value=" <%=myTypeClient %> "> 
+    <input type="submit">
+  </form> -->
+
+
+<p>Name: <%= myView[0].userName %></p>
+
+<p>TV Shows: <%= myView[0].tvShows %></p>
 
 <script>
-    console.log("myView", <%= myView[0] %>);
+    console.log("myView", <%= myTypeClient %>);
 </script>
 
 
-    <footer> sent from a file on my node server, yo!
+    <footer> Projecting Results from Database <br>
 
-    <a href="/send">send</a>
-    <a href="https://github.com/cnorwood10/animated-system-november" target="_blank">Source Code</a>
-    <!-- <a href="render"></a> -->
+    <!-- <a href="/send">send</a> -->
+    <a href="https://github.com/cnorwood10/improved-invention-papa" target="_blank">Source Code</a>
 
 </footer>
+
+<%- include('partials/html-start.ejs') %>
