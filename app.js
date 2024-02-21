@@ -31,7 +31,7 @@ async function run() {
     // await client.db("admin").command({ ping: 1 });
     const result = await client.db("papa-database").collection("papa-collection").find().toArray();
 
-    console.log("papa-database result: ", result);
+    //console.log("papa-database result: ", result);
 
     return result;
 
@@ -43,13 +43,11 @@ async function run() {
 }
 //run().catch(console.dir);
 
-app.get('/read', async (req,res) => {
+app.get('/', async (req,res) => {
 
   let dbResult = await run();
-  console.log("myResults:", dbResult[0].userName);
 
-
-
+  console.log("myResults:", dbResult);
 
   res.render('index', {
     myTypeClient: myTypeServer,
@@ -61,14 +59,14 @@ app.get('/read', async (req,res) => {
 
 
 
-app.get('/', function(req, res) {
+// app.get('/', function(req, res) {
 
-  res.render('index', {
-    myTypeClient: myTypeServer 
+//   res.render('index', {
+//     myTypeClient: myTypeServer 
 
-  });
+//   });
   
-});
+// });
 
 
 app.get('/send', function (req, res) {
@@ -76,6 +74,12 @@ app.get('/send', function (req, res) {
     res.send('Hello World from Express <br><a href="/">home</a>')
 })
 
+app.get('/name', (req,res) => {
+
+  console.log("in get to slash name:", req.query.ejsFormName); 
+  myTypeServer = req.query.ejsFormName; 
+  
+})
 // app.listen(3000)
 
 app.listen(port, () => {
