@@ -1,24 +1,24 @@
-<h1>Welcome </h1>
+<%- include('partials/html-start.ejs') %>
 
-<p>I'm Colby.
-    
-
-    
-<li> I am <%= myTypeClient %>, good at working hard, bad at being indecisive</p>
+<h1>Welcome</h1>
 
 <hr>
 
-<p><%= myView[0].userName %></p>
+<p>Name: <%= myView[0].userName %></p>
 
-<script>
-    console.log("myView", <%= myView[0] %>);
-</script>
+<p>Enneagram: <%= myView[0].personality %></p>
+
+<p>TV Shows: <%= myView[0].tvShows %></p>
+
+    <script>
+        console.log("myView", <%= myTypeClient %>);
+    </script>
 
 
-    <footer> sent from a file on my node server, yo!
+    <footer> Projecting Results from Database <br>
 
-    <a href="/send">send</a>
-    <a href="https://github.com/cnorwood10/animated-system-november" target="_blank">Source Code</a>
-    <!-- <a href="render"></a> -->
+    <a href="https://github.com/cnorwood10/improved-invention-papa" target="_blank">Source Code</a>
 
 </footer>
+
+<%- include('partials/html-end.ejs') %>
